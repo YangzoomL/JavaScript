@@ -171,22 +171,22 @@ const handleWaitlistSubmit = (event) => {
   const email = emailInput.value.trim();
 
   if (!name) {
-    formMessage.textContent = "Name is required.";
+    waitListMessage.textContent = "Name is required.";
     return;
   }
 
   if (!email.includes("@")|| !email.includes(".")) {
-    formMessage.textContent = "Please enter a valid email.";
+    waitListMessage.textContent = "Please enter a valid email.";
     return;
   }
 
-  formMessage.textContent = `Thanks for joining, ${name}!`;
+  waitListMessage.textContent = `Thanks for joining, ${name}!`;
 
   nameInput.value = "";
   emailInput.value = "";
 };
 
-// //event listeners 
+
 
 // learnMoreButton.addEventListener("click", () => {
 //     aboutText.textContent = 
@@ -232,10 +232,10 @@ const handleWaitlistSubmit = (event) => {
 const setupEvents = () => {
   learnMoreButton.addEventListener("click", () => {
     aboutText.textContent =
-      "We are a product-focused team helping startups build fast and launch confidently.";
+      "Our mission is to empower teams with innovative tools that enhance productivity and collaboration.";
   });
 
-  themeButton.addEventListener("click", () => {
+  themeToggle.addEventListener("click", () => {
     document.body.classList.toggle("dark");
   });
 
@@ -251,6 +251,7 @@ const init = () => {
   
   renderSponsors();
   renderFeatures();
+  renderTeam();
 
   
   setupEvents();
